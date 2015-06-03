@@ -25,6 +25,9 @@
     <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ALUTest_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PCTest_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="clock_dividerTest_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clock_dividerTest_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="clock_dividerTest_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="control.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="control.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="control.xst"/>
@@ -37,11 +40,12 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="register.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="register.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="registerTest_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="registerTest_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="registerTest_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="register_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="register_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sign_extender.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="sign_extender.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="sign_extender.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
@@ -51,76 +55,77 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1433332572" xil_pn:in_ck="8163105449146900150" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1433332571">
+    <transform xil_pn:end_ts="1433338994" xil_pn:in_ck="-6434387241641574578" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1433338994">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.v"/>
       <outfile xil_pn:name="ALUTest.v"/>
       <outfile xil_pn:name="PC.v"/>
       <outfile xil_pn:name="PCTest.v"/>
+      <outfile xil_pn:name="clock_divider.v"/>
+      <outfile xil_pn:name="clock_dividerTest.v"/>
       <outfile xil_pn:name="control.v"/>
       <outfile xil_pn:name="controlTest.v"/>
+      <outfile xil_pn:name="data_memory.v"/>
+      <outfile xil_pn:name="data_memoryTest.v"/>
       <outfile xil_pn:name="register.v"/>
       <outfile xil_pn:name="registerTest.v"/>
     </transform>
-    <transform xil_pn:end_ts="1433332385" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4469389646255380580" xil_pn:start_ts="1433332385">
+    <transform xil_pn:end_ts="1433338700" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1415925630960740233" xil_pn:start_ts="1433338700">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1433332385" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8687317308187549532" xil_pn:start_ts="1433332385">
+    <transform xil_pn:end_ts="1433338700" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-9161693374713867727" xil_pn:start_ts="1433338700">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1433330962" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-1421560127435671765" xil_pn:start_ts="1433330962">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1433332572" xil_pn:in_ck="8163105449146900150" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1433332572">
+    <transform xil_pn:end_ts="1433338994" xil_pn:in_ck="-6434387241641574578" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1433338994">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ALU.v"/>
       <outfile xil_pn:name="ALUTest.v"/>
       <outfile xil_pn:name="PC.v"/>
       <outfile xil_pn:name="PCTest.v"/>
+      <outfile xil_pn:name="clock_divider.v"/>
+      <outfile xil_pn:name="clock_dividerTest.v"/>
       <outfile xil_pn:name="control.v"/>
       <outfile xil_pn:name="controlTest.v"/>
+      <outfile xil_pn:name="data_memory.v"/>
+      <outfile xil_pn:name="data_memoryTest.v"/>
       <outfile xil_pn:name="register.v"/>
       <outfile xil_pn:name="registerTest.v"/>
     </transform>
-    <transform xil_pn:end_ts="1433332574" xil_pn:in_ck="8163105449146900150" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7011521026307914197" xil_pn:start_ts="1433332572">
+    <transform xil_pn:end_ts="1433338997" xil_pn:in_ck="-6434387241641574578" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2504186227224401553" xil_pn:start_ts="1433338994">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="clock_dividerTest_beh.prj"/>
+      <outfile xil_pn:name="clock_dividerTest_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="registerTest_beh.prj"/>
-      <outfile xil_pn:name="registerTest_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1433332574" xil_pn:in_ck="6761572200657165739" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3621067633795684984" xil_pn:start_ts="1433332574">
+    <transform xil_pn:end_ts="1433338997" xil_pn:in_ck="-4772252006994009108" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4427122842044399726" xil_pn:start_ts="1433338997">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="clock_dividerTest_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="registerTest_isim_beh.wdb"/>
     </transform>
   </transforms>
 
