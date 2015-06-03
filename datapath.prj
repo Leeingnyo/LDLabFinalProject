@@ -1,0 +1,8 @@
+verilog work "sign_extender.v"
+verilog work "register.v"
+verilog work "PC.v"
+verilog work "data_memory.v"
+verilog work "control.v"
+verilog work "clock_divider.v"
+verilog work "ALU.v"
+verilog work "datapath.v"
