@@ -28,6 +28,6 @@ module ALU(
 
 	wire [7:0] out;
 
-	assign out = readdata1 + alusrc ? sign_extended : readdata2;
+	assign out = readdata1 + (alusrc ? sign_extended : readdata2);
 
 endmodule

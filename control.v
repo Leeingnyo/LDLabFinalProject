@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module control(
     input [7:6] instruction,
-	 input CLK,
+	//input CLK,
     output branch,
     output memtoreg,
     output memread,
@@ -30,7 +30,26 @@ module control(
     output regwrite,
     output regdst
     );
+	/*
+	wire branch;
+	wire memtoreg;
+	wire memread;
+	wire memwrite;
+	wire aluop;
+	wire alusrc;
+	wire regwrite;
+	wire regdst;
+	*/
+	assign branch = instruction == 2'b11;
+	assign memtoreg = instruction[7] ^ instruction[6];
+	assign memread = instruction == 2'b01;
+	assign memwrite = instruction == 2'b10;
+	assign aluop = instruction == 2'b00;
+	assign alusrc = instruction[7] ^ instruction[6];
+	assign regwrite = !instruction[7];
+	assign regdst = instruction == 2'b00;
 
+	/*
 	always@(posedge CLK) begin
 		case(instruction)
 			2'b00: begin
@@ -75,5 +94,6 @@ module control(
 			end
 		endcase
 	end
+	*/
 
 endmodule
