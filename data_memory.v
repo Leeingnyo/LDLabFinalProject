@@ -30,15 +30,18 @@ module data_memory(
 
 	reg [7:0] data[0:255];
 	
-	always@(posedge RESET) begin
-		//reset data
-	end
+	integer i;
 	
-	always@(posedge CLK) begin
-		if (memread)
-			readdata = data[address];
-		if (memwrite)
-			data[address] = readdata;
+	always@(posedge CLK or posedge RESET) begin
+		if (RESET)
+			for (i = 0; i < 256; i = i + 1)
+				data[i] = i;
+		else begin
+			if (memread)
+				readdata = data[address];
+			if (memwrite)
+				data[address] = writedata;
+		end
 	end
 
 endmodule

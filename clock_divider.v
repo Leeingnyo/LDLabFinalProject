@@ -32,7 +32,7 @@ module clock_divider(
 	
 	always@(posedge CLK) begin
 		tic = tic + 1;
-		if (tic == 1000000) begin
+		if (tic == 1) begin
 			tic = 0;
 			_CLK = ~_CLK;
 		end

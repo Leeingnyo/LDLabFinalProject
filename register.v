@@ -33,18 +33,19 @@ module register(
 
 	reg [7:0] registers[0:3];
 	
-	always@(posedge RESET) begin
-		registers[0] = 0;
-		registers[1] = 0;
-		registers[2] = 0;
-		registers[3] = 0;
-	end
-	
-	always@(posedge CLK) begin
-		readdata1 = registers[read_register1];
-		readdata2 = registers[read_register2];
-		if (regwrite) begin
-			registers[regdst ? destination_register : read_register2] = regwritedata;
+	always@(posedge CLK or posedge RESET) begin
+		if (RESET) begin
+			registers[0] = 0;
+			registers[1] = 0;
+			registers[2] = 0;
+			registers[3] = 0;
+		end
+		else begin
+			readdata1 = registers[read_register1];
+			readdata2 = registers[read_register2];
+			if (regwrite) begin
+				registers[regdst ? destination_register : read_register2] = regwritedata;
+			end
 		end
 	end
 

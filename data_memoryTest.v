@@ -63,6 +63,9 @@ module data_memoryTest;
 		#100;
         
 		// Add stimulus here
+		RESET = 1;
+		#10;
+		
 
 	end
       

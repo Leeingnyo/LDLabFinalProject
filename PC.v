@@ -21,17 +21,14 @@
 module PC(
     input branch,
 	input CLK,
-	input sign_extended,
+	input [7:0] sign_extended,
 	input RESET,
     output reg [7:0] address
     );
-	
-	always@(posedge RESET) begin
-		address = 0;
-	end
 
-	always@(posedge CLK) begin
-		address = address + 1 + (branch ? sign_extended : 0);
+	always@(posedge CLK or posedge RESET) begin
+		if (RESET) address = 0;
+		else address = address + 1 + (branch ? sign_extended : 0);
 	end
 
 endmodule

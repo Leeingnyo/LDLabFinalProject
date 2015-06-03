@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/LDLabFinalProject/clock_dividerTest_isim_beh.exe" -prj "D:/LDLabFinalProject/clock_dividerTest_beh.prj" "work.clock_dividerTest" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/LDLabFinalProject/datapathTest_isim_beh.exe" -prj "D:/LDLabFinalProject/datapathTest_beh.prj" "work.datapathTest" "work.glbl" 
