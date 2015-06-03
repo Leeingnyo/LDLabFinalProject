@@ -20,9 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 module PC(
     input branch,
+	 input CLK,
+	 input sign_extended,
     output reg address
     );
 
-	
+	always@(posedge CLK) begin
+		address = adress + 1 + branch ? sign_extended : 0;
+	end
 
 endmodule
