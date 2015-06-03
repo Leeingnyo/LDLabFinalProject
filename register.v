@@ -26,11 +26,19 @@ module register(
     input [7:0] regwritedata,
     input regwrite,
 	input CLK,
+	input RESET,
     output reg [7:0] readdata1,
     output reg [7:0] readdata2
     );
 
 	reg [7:0] registers[0:3];
+	
+	always@(posedge RESET) begin
+		registers[0] = 0;
+		registers[1] = 0;
+		registers[2] = 0;
+		registers[3] = 0;
+	end
 	
 	always@(posedge CLK) begin
 		readdata1 = registers[read_register1];
