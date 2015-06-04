@@ -26,7 +26,7 @@ module PC(
     output reg [7:0] address
     );
 
-	always@(posedge CLK or posedge RESET) begin
+	always@(negedge CLK or posedge RESET) begin
 		if (RESET) address = 0;
 		else address = address + 1 + (branch ? sign_extended : 0);
 	end

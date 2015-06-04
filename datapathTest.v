@@ -53,7 +53,7 @@ module datapathTest;
 		instructions[1] = 8'b01001101;
 		instructions[2] = 8'b01110100;
 		instructions[3] = 8'b10110111;
-		instructions[4] = 8'b00000110;
+		instructions[4] = 8'b00000101;
 		instructions[5] = 8'b11000010;
 		
 		forever #10 _CLK = ~_CLK;
@@ -67,14 +67,14 @@ module datapathTest;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-		RESET = 1;
+		#20 RESET = 1;
 		#10;
         RESET = 0;
 		// Add stimulus here
 
 	end
 	
-	always@(negedge CLK_) begin
+	always@(posedge CLK_) begin
 		instruction = instructions[PC];
 	end
       

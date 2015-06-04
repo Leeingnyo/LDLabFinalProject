@@ -5,3 +5,5 @@ xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalPr
 xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
 xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
 xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 

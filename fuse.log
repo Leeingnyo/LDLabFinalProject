@@ -26,8 +26,8 @@ Compiling module datapath
 Compiling module datapathTest
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 2 sub-compilation(s) to finish...
 Compiled 10 Verilog Units
 Built simulation executable D:/LDLabFinalProject/datapathTest_isim_beh.exe
-Fuse Memory Usage: 28636 KB
+Fuse Memory Usage: 28640 KB
 Fuse CPU Usage: 483 ms

@@ -2,9 +2,9 @@ Command line:
    datapathTest_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  15591
+     -socket  2733
 
-Thu Jun 04 01:05:43 2015
+Thu Jun 04 13:50:12 2015
 
 
  Elaboration Time: 0.0156 sec
@@ -20,9 +20,9 @@ Thu Jun 04 01:05:43 2015
  Total Traceable Variables  : 31
  Total Scalar Nets and Variables : 4412
 
- Total Simulation Time: 0.0468 sec
+ Total Simulation Time: 0.0156 sec
 
- Current Memory Usage: 668.185 Meg
+ Current Memory Usage: 825.471 Meg
 
-Thu Jun 04 01:11:00 2015
+Thu Jun 04 13:53:50 2015
 

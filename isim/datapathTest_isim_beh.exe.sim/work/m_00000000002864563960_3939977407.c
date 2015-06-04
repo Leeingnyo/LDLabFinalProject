@@ -30,7 +30,7 @@ static unsigned int ng5[] = {116U, 0U};
 static int ng6[] = {2, 0};
 static unsigned int ng7[] = {183U, 0U};
 static int ng8[] = {3, 0};
-static unsigned int ng9[] = {6U, 0U};
+static unsigned int ng9[] = {5U, 0U};
 static int ng10[] = {4, 0};
 static unsigned int ng11[] = {194U, 0U};
 static int ng12[] = {5, 0};
@@ -315,6 +315,7 @@ static void Initial_62_1(char *t0)
     char *t1;
     char *t2;
     char *t3;
+    char *t4;
 
 LAB0:    t1 = (t0 + 3576U);
     t2 = *((char **)t1);
@@ -344,16 +345,22 @@ LAB4:    xsi_set_current_line(64, ng0);
 
 LAB1:    return;
 LAB5:    xsi_set_current_line(70, ng0);
-    t2 = ((char*)((ng4)));
-    t3 = (t0 + 2248);
-    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
-    xsi_set_current_line(71, ng0);
     t2 = (t0 + 3384);
-    xsi_process_wait(t2, 10000LL);
+    xsi_process_wait(t2, 20000LL);
     *((char **)t1) = &&LAB6;
     goto LAB1;
 
-LAB6:    xsi_set_current_line(72, ng0);
+LAB6:    xsi_set_current_line(70, ng0);
+    t3 = ((char*)((ng4)));
+    t4 = (t0 + 2248);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
+    xsi_set_current_line(71, ng0);
+    t2 = (t0 + 3384);
+    xsi_process_wait(t2, 10000LL);
+    *((char **)t1) = &&LAB7;
+    goto LAB1;
+
+LAB7:    xsi_set_current_line(72, ng0);
     t2 = ((char*)((ng2)));
     t3 = (t0 + 2248);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
