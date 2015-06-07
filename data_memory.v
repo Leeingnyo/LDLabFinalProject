@@ -24,21 +24,21 @@ module data_memory(
     input memread,
     input memwrite,
     input CLK,
-	input RESET,
-    output reg [7:0] readdata
+    input RESET,
+    output [7:0] readdata
     );
 
-	reg [7:0] data[0:255];
+	reg [7:0] data[0:31];
 	
 	integer i;
 	
+	assign readdata = data[address];
+	
 	always@(posedge CLK or posedge RESET) begin
 		if (RESET)
-			for (i = 0; i < 256; i = i + 1)
+			for (i = 0; i < 31; i = i + 1)
 				data[i] = i;
 		else begin
-			if (memread)
-				readdata = data[address];
 			if (memwrite)
 				data[address] = writedata;
 		end

@@ -2,27 +2,27 @@ Command line:
    datapathTest_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  2733
+     -socket  54439
 
-Thu Jun 04 13:50:12 2015
+Sun Jun 07 23:38:25 2015
 
 
- Elaboration Time: 0.0156 sec
+ Elaboration Time: 0.078 sec
 
- Current Memory Usage: 825.471 Meg
+ Current Memory Usage: 665.24 Meg
 
- Total Signals          : 74
+ Total Signals          : 75
  Total Nets             : 97
  Total Signal Drivers   : 34
  Total Blocks           : 10
  Total Primitive Blocks : 8
  Total Processes        : 43
- Total Traceable Variables  : 31
- Total Scalar Nets and Variables : 4412
+ Total Traceable Variables  : 30
+ Total Scalar Nets and Variables : 612
 
- Total Simulation Time: 0.0156 sec
+ Total Simulation Time: 0.078 sec
 
- Current Memory Usage: 825.471 Meg
+ Current Memory Usage: 665.24 Meg
 
-Thu Jun 04 13:53:50 2015
+Sun Jun 07 23:41:23 2015
 

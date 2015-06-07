@@ -46,7 +46,7 @@ module datapathTest;
 		.CLK_(CLK_)
 	);
 	
-	reg [7:0] instructions [0:255];
+	reg [7:0] instructions [0:5];
 	
 	initial begin
 		instructions[0] = 8'b01110011;
