@@ -31,8 +31,9 @@ module datapathTest;
 
 	// Outputs
 	wire [7:0] PC;
-	wire [3:0] m;
-	wire [3:0] l;
+	wire [6:0] m;
+	wire [6:0] l;
+	wire [7:0] datatowrite;
 	wire CLK_;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -43,7 +44,8 @@ module datapathTest;
 		.PC(PC), 
 		.m(m), 
 		.l(l),
-		.CLK_(CLK_)
+		.CLK_(CLK_),
+		.datatowrite(datatowrite)
 	);
 	
 	reg [7:0] instructions [0:5];

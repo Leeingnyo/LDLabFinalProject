@@ -23,9 +23,10 @@ module datapath(
     input _CLK,
     input RESET,
     output [7:0] PC,
-    output [3:0] m,
-	output [3:0] l,
-	output CLK_
+    output [6:0] m,
+	output [6:0] l,
+	output CLK_,
+	output [7:0] datatowrite
     );
 
 	wire CLK;
@@ -46,8 +47,6 @@ module datapath(
 	register register(instruction[5:4], instruction[3:2], instruction[1:0], regdst, datatowrite, regwrite, CLK, RESET, readdata1, readdata2);
 	data_memory data_memory(aluoutput, readdata2, memread, memwrite, CLK, RESET, writedata);
 	sign_extender sign_extender(instruction[1:0], imm);
-	
-	assign m = datatowrite[7:4];
-	assign l = datatowrite[3:0];
+	out out(datatowrite[7:4], datatowrite[3:0], m, l);
 
 endmodule
