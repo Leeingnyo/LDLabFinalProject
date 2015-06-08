@@ -25,61 +25,7 @@ static const char *ng0 = "D:/LDLabFinalProject/datapath.v";
 
 
 
-static void Cont_40_0(char *t0)
-{
-    char *t1;
-    char *t2;
-    char *t3;
-    char *t4;
-    char *t5;
-    char *t6;
-    char *t7;
-    unsigned int t8;
-    unsigned int t9;
-    char *t10;
-    unsigned int t11;
-    unsigned int t12;
-    char *t13;
-    unsigned int t14;
-    unsigned int t15;
-    char *t16;
-
-LAB0:    t1 = (t0 + 5728U);
-    t2 = *((char **)t1);
-    if (t2 == 0)
-        goto LAB2;
-
-LAB3:    goto *t2;
-
-LAB2:    xsi_set_current_line(40, ng0);
-    t2 = (t0 + 2488U);
-    t3 = *((char **)t2);
-    t2 = (t0 + 7184);
-    t4 = (t2 + 56U);
-    t5 = *((char **)t4);
-    t6 = (t5 + 56U);
-    t7 = *((char **)t6);
-    memset(t7, 0, 8);
-    t8 = 255U;
-    t9 = t8;
-    t10 = (t3 + 4);
-    t11 = *((unsigned int *)t3);
-    t8 = (t8 & t11);
-    t12 = *((unsigned int *)t10);
-    t9 = (t9 & t12);
-    t13 = (t7 + 4);
-    t14 = *((unsigned int *)t7);
-    *((unsigned int *)t7) = (t14 | t8);
-    t15 = *((unsigned int *)t13);
-    *((unsigned int *)t13) = (t15 | t9);
-    xsi_driver_vfirst_trans(t2, 0, 7);
-    t16 = (t0 + 7040);
-    *((int *)t16) = 1;
-
-LAB1:    return;
-}
-
-static void Cont_42_1(char *t0)
+static void Cont_39_0(char *t0)
 {
     char t3[8];
     char t4[8];
@@ -117,15 +63,15 @@ static void Cont_42_1(char *t0)
     unsigned int t34;
     char *t35;
 
-LAB0:    t1 = (t0 + 5976U);
+LAB0:    t1 = (t0 + 5568U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(42, ng0);
-    t2 = (t0 + 3288U);
+LAB2:    xsi_set_current_line(39, ng0);
+    t2 = (t0 + 3128U);
     t5 = *((char **)t2);
     memset(t4, 0, 8);
     t2 = (t5 + 4);
@@ -162,7 +108,7 @@ LAB13:    if (*((unsigned int *)t4) > 0)
 
 LAB15:    memcpy(t3, t22, 8);
 
-LAB16:    t16 = (t0 + 7248);
+LAB16:    t16 = (t0 + 6760);
     t23 = (t16 + 56U);
     t24 = *((char **)t23);
     t25 = (t24 + 56U);
@@ -181,7 +127,7 @@ LAB16:    t16 = (t0 + 7248);
     t34 = *((unsigned int *)t32);
     *((unsigned int *)t32) = (t34 | t28);
     xsi_driver_vfirst_trans(t16, 0, 7);
-    t35 = (t0 + 7056);
+    t35 = (t0 + 6632);
     *((int *)t35) = 1;
 
 LAB1:    return;
@@ -193,11 +139,11 @@ LAB6:    t11 = (t4 + 4);
     *((unsigned int *)t11) = 1;
     goto LAB7;
 
-LAB8:    t16 = (t0 + 4408U);
+LAB8:    t16 = (t0 + 4248U);
     t17 = *((char **)t16);
     goto LAB9;
 
-LAB10:    t16 = (t0 + 2488U);
+LAB10:    t16 = (t0 + 2328U);
     t22 = *((char **)t16);
     goto LAB11;
 
@@ -209,7 +155,7 @@ LAB14:    memcpy(t3, t17, 8);
 
 }
 
-static void Cont_43_2(char *t0)
+static void Cont_40_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -228,17 +174,17 @@ static void Cont_43_2(char *t0)
     unsigned int t15;
     char *t16;
 
-LAB0:    t1 = (t0 + 6224U);
+LAB0:    t1 = (t0 + 5816U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(43, ng0);
-    t2 = (t0 + 2328U);
+LAB2:    xsi_set_current_line(40, ng0);
+    t2 = (t0 + 2168U);
     t3 = *((char **)t2);
-    t2 = (t0 + 7312);
+    t2 = (t0 + 6824);
     t4 = (t2 + 56U);
     t5 = *((char **)t4);
     t6 = (t5 + 56U);
@@ -257,13 +203,13 @@ LAB2:    xsi_set_current_line(43, ng0);
     t15 = *((unsigned int *)t13);
     *((unsigned int *)t13) = (t15 | t9);
     xsi_driver_vfirst_trans(t2, 0, 0);
-    t16 = (t0 + 7072);
+    t16 = (t0 + 6648);
     *((int *)t16) = 1;
 
 LAB1:    return;
 }
 
-static void Cont_53_3(char *t0)
+static void Cont_50_2(char *t0)
 {
     char t3[8];
     char *t1;
@@ -291,15 +237,15 @@ static void Cont_53_3(char *t0)
     unsigned int t24;
     char *t25;
 
-LAB0:    t1 = (t0 + 6472U);
+LAB0:    t1 = (t0 + 6064U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(53, ng0);
-    t2 = (t0 + 4568U);
+LAB2:    xsi_set_current_line(50, ng0);
+    t2 = (t0 + 4408U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
     t2 = (t3 + 4);
@@ -314,7 +260,7 @@ LAB2:    xsi_set_current_line(53, ng0);
     *((unsigned int *)t3) = (t10 & 15U);
     t11 = *((unsigned int *)t2);
     *((unsigned int *)t2) = (t11 & 15U);
-    t12 = (t0 + 7376);
+    t12 = (t0 + 6888);
     t13 = (t12 + 56U);
     t14 = *((char **)t13);
     t15 = (t14 + 56U);
@@ -333,13 +279,13 @@ LAB2:    xsi_set_current_line(53, ng0);
     t24 = *((unsigned int *)t22);
     *((unsigned int *)t22) = (t24 | t18);
     xsi_driver_vfirst_trans(t12, 0, 3);
-    t25 = (t0 + 7088);
+    t25 = (t0 + 6664);
     *((int *)t25) = 1;
 
 LAB1:    return;
 }
 
-static void Cont_54_4(char *t0)
+static void Cont_51_3(char *t0)
 {
     char t3[8];
     char *t1;
@@ -367,15 +313,15 @@ static void Cont_54_4(char *t0)
     unsigned int t24;
     char *t25;
 
-LAB0:    t1 = (t0 + 6720U);
+LAB0:    t1 = (t0 + 6312U);
     t2 = *((char **)t1);
     if (t2 == 0)
         goto LAB2;
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(54, ng0);
-    t2 = (t0 + 4568U);
+LAB2:    xsi_set_current_line(51, ng0);
+    t2 = (t0 + 4408U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
     t2 = (t3 + 4);
@@ -390,7 +336,7 @@ LAB2:    xsi_set_current_line(54, ng0);
     *((unsigned int *)t3) = (t10 & 15U);
     t11 = *((unsigned int *)t2);
     *((unsigned int *)t2) = (t11 & 15U);
-    t12 = (t0 + 7440);
+    t12 = (t0 + 6952);
     t13 = (t12 + 56U);
     t14 = *((char **)t13);
     t15 = (t14 + 56U);
@@ -409,16 +355,16 @@ LAB2:    xsi_set_current_line(54, ng0);
     t24 = *((unsigned int *)t22);
     *((unsigned int *)t22) = (t24 | t18);
     xsi_driver_vfirst_trans(t12, 0, 3);
-    t25 = (t0 + 7104);
+    t25 = (t0 + 6680);
     *((int *)t25) = 1;
 
 LAB1:    return;
 }
 
 
-extern void work_m_00000000002359967369_3027548060_init()
+extern void work_m_00000000004087656683_3027548060_init()
 {
-	static char *pe[] = {(void *)Cont_40_0,(void *)Cont_42_1,(void *)Cont_43_2,(void *)Cont_53_3,(void *)Cont_54_4};
-	xsi_register_didat("work_m_00000000002359967369_3027548060", "isim/datapathTest_isim_beh.exe.sim/work/m_00000000002359967369_3027548060.didat");
+	static char *pe[] = {(void *)Cont_39_0,(void *)Cont_40_1,(void *)Cont_50_2,(void *)Cont_51_3};
+	xsi_register_didat("work_m_00000000004087656683_3027548060", "isim/datapathTest_isim_beh.exe.sim/work/m_00000000004087656683_3027548060.didat");
 	xsi_register_executes(pe);
 }

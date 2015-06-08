@@ -32,7 +32,7 @@ module data_memory(
 	
 	integer i;
 	
-	assign readdata = data[address];
+	assign readdata = (!memwrite && !memread) ? readdata : data[address];
 	
 	always@(posedge CLK or posedge RESET) begin
 		if (RESET)

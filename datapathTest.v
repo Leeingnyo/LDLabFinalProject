@@ -34,7 +34,6 @@ module datapathTest;
 	wire [3:0] m;
 	wire [3:0] l;
 	wire CLK_;
-	wire [7:0] address;
 
 	// Instantiate the Unit Under Test (UUT)
 	datapath uut (
@@ -44,8 +43,7 @@ module datapathTest;
 		.PC(PC), 
 		.m(m), 
 		.l(l),
-		.CLK_(CLK_),
-		.address(address)
+		.CLK_(CLK_)
 	);
 	
 	reg [7:0] instructions [0:5];
@@ -56,7 +54,7 @@ module datapathTest;
 		instructions[2] = 8'b01110100;
 		instructions[3] = 8'b10110111;
 		instructions[4] = 8'b00000101;
-		instructions[5] = 8'b11000010;
+		instructions[5] = 8'b11xxxx10;
 		
 		forever #10 _CLK = ~_CLK;
 	end

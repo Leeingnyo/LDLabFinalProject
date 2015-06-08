@@ -25,8 +25,7 @@ module datapath(
     output [7:0] PC,
     output [3:0] m,
 	output [3:0] l,
-	output CLK_,
-	output [7:0] address
+	output CLK_
     );
 
 	wire CLK;
@@ -36,8 +35,6 @@ module datapath(
 	wire branch, memtoreg, memread, memwrite, aluop, alusrc, regwrite, regdst;
 	wire [7:0] writedata;
 	wire [7:0] datatowrite;
-	
-	assign address = aluoutput;
 	
 	assign datatowrite = memtoreg ? writedata : aluoutput;
 	assign CLK_ = CLK;
