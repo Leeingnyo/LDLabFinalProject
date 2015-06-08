@@ -27,11 +27,13 @@ module register(
     input regwrite,
 	input CLK,
 	input RESET,
-    output reg [7:0] readdata1,
-    output reg [7:0] readdata2
+    output [7:0] readdata1,
+    output [7:0] readdata2
     );
 
 	reg [7:0] registers[0:3];
+	assign readdata1 = registers[read_register1];
+	assign readdata2 = registers[read_register2];
 	
 	always@(posedge CLK or posedge RESET) begin
 		if (RESET) begin
@@ -41,8 +43,6 @@ module register(
 			registers[3] = 0;
 		end
 		else begin
-			readdata1 = registers[read_register1];
-			readdata2 = registers[read_register2];
 			if (regwrite) begin
 				registers[regdst ? destination_register : read_register2] = regwritedata;
 			end
