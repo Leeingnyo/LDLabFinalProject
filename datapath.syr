@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.76 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.76 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: datapath.prj
 
@@ -109,8 +109,11 @@ Compiling verilog file "register.v" in library work
 Module <sign_extender> compiled
 Compiling verilog file "PC.v" in library work
 Module <register> compiled
-Compiling verilog file "data_memory.v" in library work
+Compiling verilog file "out.v" in library work
 Module <PC> compiled
+Module <out> compiled
+Compiling verilog file "data_memory.v" in library work
+Module <decoder7seg> compiled
 Compiling verilog file "control.v" in library work
 Module <data_memory> compiled
 Compiling verilog file "clock_divider.v" in library work
@@ -143,6 +146,10 @@ Analyzing hierarchy for module <data_memory> in library <work>.
 
 Analyzing hierarchy for module <sign_extender> in library <work>.
 
+Analyzing hierarchy for module <out> in library <work>.
+
+Analyzing hierarchy for module <decoder7seg> in library <work>.
+
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -166,10 +173,17 @@ Analyzing module <register> in library <work>.
 Module <register> is correct for synthesis.
  
 Analyzing module <data_memory> in library <work>.
+INFO:Xst:1433 - Contents of array <data> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Module <data_memory> is correct for synthesis.
  
 Analyzing module <sign_extender> in library <work>.
 Module <sign_extender> is correct for synthesis.
+ 
+Analyzing module <out> in library <work>.
+Module <out> is correct for synthesis.
+ 
+Analyzing module <decoder7seg> in library <work>.
+Module <decoder7seg> is correct for synthesis.
  
 
 =========================================================================
@@ -216,11 +230,11 @@ Unit <control> synthesized.
 
 Synthesizing Unit <register>.
     Related source file is "register.v".
-    Found 8-bit register for signal <readdata1>.
-    Found 8-bit register for signal <readdata2>.
+    Found 8-bit 4-to-1 multiplexer for signal <readdata1>.
+    Found 8-bit 4-to-1 multiplexer for signal <readdata2>.
     Found 32-bit register for signal <registers>.
     Summary:
-	inferred  48 D-type flip-flop(s).
+	inferred  32 D-type flip-flop(s).
 	inferred  16 Multiplexer(s).
 Unit <register> synthesized.
 
@@ -228,11 +242,12 @@ Unit <register> synthesized.
 Synthesizing Unit <data_memory>.
     Related source file is "data_memory.v".
 WARNING:Xst:647 - Input <address<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 8-bit register for signal <readdata>.
+WARNING:Xst:737 - Found 8-bit latch for signal <readdata>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit 32-to-1 multiplexer for signal <$varindex0000> created at line 35.
     Found 256-bit register for signal <data>.
 INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <data>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
     Summary:
-	inferred  24 D-type flip-flop(s).
+	inferred  16 D-type flip-flop(s).
 	inferred   8 Multiplexer(s).
 Unit <data_memory> synthesized.
 
@@ -240,6 +255,19 @@ Unit <data_memory> synthesized.
 Synthesizing Unit <sign_extender>.
     Related source file is "sign_extender.v".
 Unit <sign_extender> synthesized.
+
+
+Synthesizing Unit <decoder7seg>.
+    Related source file is "out.v".
+    Found 16x7-bit ROM for signal <LED>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <decoder7seg> synthesized.
+
+
+Synthesizing Unit <out>.
+    Related source file is "out.v".
+Unit <out> synthesized.
 
 
 Synthesizing Unit <datapath>.
@@ -252,6 +280,8 @@ Unit <datapath> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 2
 # Adders/Subtractors                                   : 3
  32-bit adder                                          : 1
  8-bit adder                                           : 2
@@ -259,9 +289,11 @@ Macro Statistics
  32-bit up counter                                     : 1
 # Accumulators                                         : 1
  8-bit up accumulator                                  : 1
-# Registers                                            : 40
+# Registers                                            : 37
  1-bit register                                        : 1
- 8-bit register                                        : 39
+ 8-bit register                                        : 36
+# Latches                                              : 1
+ 8-bit latch                                           : 1
 # Multiplexers                                         : 3
  8-bit 32-to-1 multiplexer                             : 1
  8-bit 4-to-1 multiplexer                              : 2
@@ -279,6 +311,8 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 2
+ 16x7-bit ROM                                          : 2
 # Adders/Subtractors                                   : 3
  32-bit adder                                          : 1
  8-bit adder                                           : 2
@@ -286,8 +320,10 @@ Macro Statistics
  32-bit up counter                                     : 1
 # Accumulators                                         : 1
  8-bit up accumulator                                  : 1
-# Registers                                            : 313
- Flip-Flops                                            : 313
+# Registers                                            : 289
+ Flip-Flops                                            : 289
+# Latches                                              : 1
+ 8-bit latch                                           : 1
 # Multiplexers                                         : 17
  1-bit 4-to-1 multiplexer                              : 16
  8-bit 32-to-1 multiplexer                             : 1
@@ -312,7 +348,7 @@ Optimizing unit <data_memory> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block datapath, actual ratio is 45.
+Found area constraint ratio of 100 (+ 5) on block datapath, actual ratio is 44.
 
 Final Macro Processing ...
 
@@ -320,8 +356,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 353
- Flip-Flops                                            : 353
+# Registers                                            : 329
+ Flip-Flops                                            : 329
 
 =========================================================================
 
@@ -347,17 +383,19 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 27
+# IOs                              : 33
 
 Cell Usage :
-# BELS                             : 618
+# BELS                             : 628
 #      GND                         : 1
-#      INV                         : 5
+#      INV                         : 4
 #      LUT1                        : 62
 #      LUT2                        : 4
-#      LUT3                        : 200
-#      LUT4                        : 33
-#      LUT4_D                      : 8
+#      LUT3                        : 168
+#      LUT3_D                      : 2
+#      LUT4                        : 78
+#      LUT4_D                      : 3
+#      LUT4_L                      : 1
 #      MUXCY                       : 84
 #      MUXF5                       : 84
 #      MUXF6                       : 32
@@ -365,18 +403,19 @@ Cell Usage :
 #      MUXF8                       : 8
 #      VCC                         : 1
 #      XORCY                       : 80
-# FlipFlops/Latches                : 353
+# FlipFlops/Latches                : 337
 #      FDC                         : 8
 #      FDCE                        : 205
-#      FDE                         : 33
+#      FDE                         : 9
 #      FDPE                        : 75
 #      FDR                         : 32
+#      LD                          : 8
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 26
+# IO Buffers                       : 32
 #      IBUF                        : 9
-#      OBUF                        : 17
+#      OBUF                        : 23
 =========================================================================
 
 Device utilization summary:
@@ -384,11 +423,11 @@ Device utilization summary:
 
 Selected Device : 3s50antqg144-4 
 
- Number of Slices:                      325  out of    704    46%  
- Number of Slice Flip Flops:            353  out of   1408    25%  
- Number of 4 input LUTs:                312  out of   1408    22%  
- Number of IOs:                          27
- Number of bonded IOBs:                  27  out of    108    25%  
+ Number of Slices:                      313  out of    704    44%  
+ Number of Slice Flip Flops:            337  out of   1408    23%  
+ Number of 4 input LUTs:                322  out of   1408    22%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    108    30%  
  Number of GCLKs:                         2  out of     24     8%  
 
 ---------------------------
@@ -409,12 +448,17 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-_CLK                               | BUFGP                  | 33    |
-clock_divider/_CLK1                | BUFG                   | 320   |
------------------------------------+------------------------+-------+
+-------------------------------------+--------------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)          | Load  |
+-------------------------------------+--------------------------------+-------+
+_CLK                                 | BUFGP                          | 33    |
+clock_divider/_CLK1                  | BUFG                           | 296   |
+alusrc(control/Mxor_alusrc_Result1:O)| NONE(*)(data_memory/readdata_7)| 8     |
+-------------------------------------+--------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -428,10 +472,10 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 9.101ns (Maximum Frequency: 109.884MHz)
-   Minimum input arrival time before clock: 9.898ns
-   Maximum output required time after clock: 11.254ns
-   Maximum combinational path delay: 12.966ns
+   Minimum period: 9.809ns (Maximum Frequency: 101.947MHz)
+   Minimum input arrival time before clock: 10.790ns
+   Maximum output required time after clock: 14.274ns
+   Maximum combinational path delay: 15.255ns
 
 Timing Detail:
 --------------
@@ -494,60 +538,85 @@ Delay:               9.101ns (Levels of Logic = 34)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_divider/_CLK1'
-  Clock period: 8.187ns (frequency: 122.152MHz)
-  Total number of paths / destination ports: 12432 / 576
+  Clock period: 9.809ns (frequency: 101.947MHz)
+  Total number of paths / destination ports: 43648 / 552
 -------------------------------------------------------------------------
-Delay:               8.187ns (Levels of Logic = 8)
-  Source:            register/readdata2_0 (FF)
-  Destination:       data_memory/data_1_0 (FF)
+Delay:               9.809ns (Levels of Logic = 7)
+  Source:            register/registers_0_0 (FF)
+  Destination:       data_memory/data_2_0 (FF)
   Source Clock:      clock_divider/_CLK1 rising
   Destination Clock: clock_divider/_CLK1 rising
 
-  Data Path: register/readdata2_0 to data_memory/data_1_0
+  Data Path: register/registers_0_0 to data_memory/data_2_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             33   0.591   1.266  register/readdata2_0 (register/readdata2_0)
+     FDCE:C->Q             2   0.591   0.527  register/registers_0_0 (register/registers_0_0)
+     LUT3:I1->O            1   0.643   0.000  register/mux8_2_f5_F (N82)
+     MUXF5:I0->O          33   0.276   1.266  register/mux8_2_f5 (readdata2<0>)
      LUT4:I3->O            1   0.648   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
      MUXCY:S->O            1   0.632   0.000  alu/Madd_out_cy<0> (alu/Madd_out_cy<0>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<1> (alu/Madd_out_cy<1>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<2> (alu/Madd_out_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<3> (alu/Madd_out_cy<3>)
-     XORCY:CI->O          17   0.844   1.083  alu/Madd_out_xor<4> (aluoutput<4>)
-     LUT4_D:I2->O          3   0.648   0.563  data_memory/data_31_and000031 (data_memory/N8)
-     LUT3:I2->O            8   0.648   0.757  data_memory/data_23_not00011 (data_memory/data_23_not0001)
-     FDPE:CE                   0.312          data_memory/data_23_0
+     XORCY:CI->O          71   0.844   1.307  alu/Madd_out_xor<1> (aluoutput<1>)
+     LUT3_D:I2->O          7   0.648   0.711  data_memory/data_10_not000131_SW0 (N20)
+     LUT4:I3->O            8   0.648   0.757  data_memory/data_2_not00011 (data_memory/data_2_not0001)
+     FDCE:CE                   0.312          data_memory/data_2_0
     ----------------------------------------
-    Total                      8.187ns (4.518ns logic, 3.669ns route)
-                                       (55.2% logic, 44.8% route)
+    Total                      9.809ns (5.242ns logic, 4.567ns route)
+                                       (53.4% logic, 46.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_divider/_CLK1'
-  Total number of paths / destination ports: 14384 / 376
+  Total number of paths / destination ports: 45616 / 584
 -------------------------------------------------------------------------
-Offset:              9.898ns (Levels of Logic = 10)
-  Source:            instruction<7> (PAD)
-  Destination:       data_memory/data_1_0 (FF)
+Offset:              10.790ns (Levels of Logic = 8)
+  Source:            instruction<2> (PAD)
+  Destination:       data_memory/data_2_0 (FF)
   Destination Clock: clock_divider/_CLK1 rising
 
-  Data Path: instruction<7> to data_memory/data_1_0
+  Data Path: instruction<2> to data_memory/data_2_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            22   0.849   1.244  instruction_7_IBUF (instruction_7_IBUF)
-     LUT2:I1->O            8   0.643   0.837  control/Mxor_alusrc_Result1 (alusrc)
-     LUT4:I1->O            1   0.643   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
+     IBUF:I->O            20   0.849   1.245  instruction_2_IBUF (instruction_2_IBUF)
+     LUT3:I0->O            1   0.648   0.000  register/mux8_2_f5_F (N82)
+     MUXF5:I0->O          33   0.276   1.266  register/mux8_2_f5 (readdata2<0>)
+     LUT4:I3->O            1   0.648   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
      MUXCY:S->O            1   0.632   0.000  alu/Madd_out_cy<0> (alu/Madd_out_cy<0>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<1> (alu/Madd_out_cy<1>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<2> (alu/Madd_out_cy<2>)
-     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<3> (alu/Madd_out_cy<3>)
-     XORCY:CI->O          17   0.844   1.083  alu/Madd_out_xor<4> (aluoutput<4>)
-     LUT4_D:I2->O          3   0.648   0.563  data_memory/data_31_and000031 (data_memory/N8)
-     LUT3:I2->O            8   0.648   0.757  data_memory/data_23_not00011 (data_memory/data_23_not0001)
-     FDPE:CE                   0.312          data_memory/data_23_0
+     XORCY:CI->O          71   0.844   1.307  alu/Madd_out_xor<1> (aluoutput<1>)
+     LUT3_D:I2->O          7   0.648   0.711  data_memory/data_10_not000131_SW0 (N20)
+     LUT4:I3->O            8   0.648   0.757  data_memory/data_2_not00011 (data_memory/data_2_not0001)
+     FDCE:CE                   0.312          data_memory/data_2_0
     ----------------------------------------
-    Total                      9.898ns (5.414ns logic, 4.484ns route)
-                                       (54.7% logic, 45.3% route)
+    Total                     10.790ns (5.505ns logic, 5.285ns route)
+                                       (51.0% logic, 49.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'alusrc'
+  Total number of paths / destination ports: 4728 / 8
+-------------------------------------------------------------------------
+Offset:              9.563ns (Levels of Logic = 10)
+  Source:            instruction<2> (PAD)
+  Destination:       data_memory/readdata_7 (LATCH)
+  Destination Clock: alusrc falling
+
+  Data Path: instruction<2> to data_memory/readdata_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.849   1.245  instruction_2_IBUF (instruction_2_IBUF)
+     LUT3:I0->O            1   0.648   0.000  register/mux8_2_f5_F (N82)
+     MUXF5:I0->O          33   0.276   1.266  register/mux8_2_f5 (readdata2<0>)
+     LUT4:I3->O            1   0.648   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
+     MUXCY:S->O            1   0.632   0.000  alu/Madd_out_cy<0> (alu/Madd_out_cy<0>)
+     XORCY:CI->O          71   0.844   1.275  alu/Madd_out_xor<1> (aluoutput<1>)
+     MUXF5:S->O            1   0.756   0.000  data_memory/Mmux__varindex0000_5_f5 (data_memory/Mmux__varindex0000_5_f5)
+     MUXF6:I1->O           1   0.291   0.000  data_memory/Mmux__varindex0000_4_f6 (data_memory/Mmux__varindex0000_4_f6)
+     MUXF7:I1->O           1   0.291   0.000  data_memory/Mmux__varindex0000_3_f7 (data_memory/Mmux__varindex0000_3_f7)
+     MUXF8:I1->O           1   0.291   0.000  data_memory/Mmux__varindex0000_2_f8 (data_memory/_varindex0000<0>)
+     LD:D                      0.252          data_memory/readdata_0
+    ----------------------------------------
+    Total                      9.563ns (5.778ns logic, 3.785ns route)
+                                       (60.4% logic, 39.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock '_CLK'
@@ -570,65 +639,93 @@ Offset:              5.642ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_divider/_CLK1'
-  Total number of paths / destination ports: 116 / 16
+  Total number of paths / destination ports: 2808 / 22
 -------------------------------------------------------------------------
-Offset:              11.254ns (Levels of Logic = 7)
-  Source:            register/readdata2_0 (FF)
-  Destination:       l<3> (PAD)
+Offset:              14.274ns (Levels of Logic = 11)
+  Source:            register/registers_0_0 (FF)
+  Destination:       m<5> (PAD)
   Source Clock:      clock_divider/_CLK1 rising
 
-  Data Path: register/readdata2_0 to l<3>
+  Data Path: register/registers_0_0 to m<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             33   0.591   1.266  register/readdata2_0 (register/readdata2_0)
+     FDCE:C->Q             2   0.591   0.527  register/registers_0_0 (register/registers_0_0)
+     LUT3:I1->O            1   0.643   0.000  register/mux8_2_f5_F (N82)
+     MUXF5:I0->O          33   0.276   1.266  register/mux8_2_f5 (readdata2<0>)
      LUT4:I3->O            1   0.648   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
      MUXCY:S->O            1   0.632   0.000  alu/Madd_out_cy<0> (alu/Madd_out_cy<0>)
      MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<1> (alu/Madd_out_cy<1>)
      MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<2> (alu/Madd_out_cy<2>)
-     XORCY:CI->O          49   0.844   1.348  alu/Madd_out_xor<3> (aluoutput<3>)
-     LUT4:I1->O            5   0.643   0.633  datatowrite<3>1 (l_3_OBUF)
-     OBUF:I->O                 4.520          l_3_OBUF (l<3>)
+     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<3> (alu/Madd_out_cy<3>)
+     XORCY:CI->O          41   0.844   1.345  alu/Madd_out_xor<4> (aluoutput<4>)
+     LUT4:I1->O           11   0.643   1.076  datatowrite<4>1 (datatowrite<4>)
+     LUT4:I0->O            1   0.648   0.420  out/msbled/Mrom_LED41 (m_4_OBUF)
+     OBUF:I->O                 4.520          m_4_OBUF (m<4>)
     ----------------------------------------
-    Total                     11.254ns (8.008ns logic, 3.246ns route)
-                                       (71.2% logic, 28.8% route)
+    Total                     14.274ns (9.640ns logic, 4.634ns route)
+                                       (67.5% logic, 32.5% route)
 
 =========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 124 / 8
+Timing constraint: Default OFFSET OUT AFTER for Clock 'alusrc'
+  Total number of paths / destination ports: 56 / 14
 -------------------------------------------------------------------------
-Delay:               12.966ns (Levels of Logic = 9)
-  Source:            instruction<7> (PAD)
-  Destination:       l<3> (PAD)
+Offset:              8.463ns (Levels of Logic = 3)
+  Source:            data_memory/readdata_2 (LATCH)
+  Destination:       l<6> (PAD)
+  Source Clock:      alusrc falling
 
-  Data Path: instruction<7> to l<3>
+  Data Path: data_memory/readdata_2 to l<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            22   0.849   1.244  instruction_7_IBUF (instruction_7_IBUF)
-     LUT2:I1->O            8   0.643   0.837  control/Mxor_alusrc_Result1 (alusrc)
-     LUT4:I1->O            1   0.643   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
+     LD:G->Q               1   0.728   0.423  data_memory/readdata_2 (data_memory/readdata_2)
+     LUT4:I3->O           11   0.648   1.076  datatowrite<2>1 (datatowrite<2>)
+     LUT4:I0->O            1   0.648   0.420  out/lsbled/Mrom_LED61 (l_6_OBUF)
+     OBUF:I->O                 4.520          l_6_OBUF (l<6>)
+    ----------------------------------------
+    Total                      8.463ns (6.544ns logic, 1.919ns route)
+                                       (77.3% logic, 22.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2968 / 14
+-------------------------------------------------------------------------
+Delay:               15.255ns (Levels of Logic = 12)
+  Source:            instruction<2> (PAD)
+  Destination:       m<5> (PAD)
+
+  Data Path: instruction<2> to m<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   0.849   1.245  instruction_2_IBUF (instruction_2_IBUF)
+     LUT3:I0->O            1   0.648   0.000  register/mux8_2_f5_F (N82)
+     MUXF5:I0->O          33   0.276   1.266  register/mux8_2_f5 (readdata2<0>)
+     LUT4:I3->O            1   0.648   0.000  alu/Madd_out_lut<0> (alu/Madd_out_lut<0>)
      MUXCY:S->O            1   0.632   0.000  alu/Madd_out_cy<0> (alu/Madd_out_cy<0>)
      MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<1> (alu/Madd_out_cy<1>)
      MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<2> (alu/Madd_out_cy<2>)
-     XORCY:CI->O          49   0.844   1.348  alu/Madd_out_xor<3> (aluoutput<3>)
-     LUT4:I1->O            5   0.643   0.633  datatowrite<3>1 (l_3_OBUF)
-     OBUF:I->O                 4.520          l_3_OBUF (l<3>)
+     MUXCY:CI->O           1   0.065   0.000  alu/Madd_out_cy<3> (alu/Madd_out_cy<3>)
+     XORCY:CI->O          41   0.844   1.345  alu/Madd_out_xor<4> (aluoutput<4>)
+     LUT4:I1->O           11   0.643   1.076  datatowrite<4>1 (datatowrite<4>)
+     LUT4:I0->O            1   0.648   0.420  out/msbled/Mrom_LED41 (m_4_OBUF)
+     OBUF:I->O                 4.520          m_4_OBUF (m<4>)
     ----------------------------------------
-    Total                     12.966ns (8.904ns logic, 4.062ns route)
-                                       (68.7% logic, 31.3% route)
+    Total                     15.255ns (9.903ns logic, 5.352ns route)
+                                       (64.9% logic, 35.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.12 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.98 secs
  
 --> 
 
-Total memory usage is 265796 kilobytes
+Total memory usage is 266124 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

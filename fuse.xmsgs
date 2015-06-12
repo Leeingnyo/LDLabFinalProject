@@ -5,8 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="751" delta="unknown" >"D:/LDLabFinalProject/datapath.v" Line 38: Redeclaration of ansi port <arg fmt="%s" index="1">datatowrite</arg> is not allowed
-</msg>
-
 </messages>
 

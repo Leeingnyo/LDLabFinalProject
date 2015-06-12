@@ -213,6 +213,6 @@ LAB1:    return;
 extern void work_m_00000000003924970678_3027548060_init()
 {
 	static char *pe[] = {(void *)Cont_40_0,(void *)Cont_41_1};
-	xsi_register_didat("work_m_00000000003924970678_3027548060", "isim/datapathTest_isim_beh.exe.sim/work/m_00000000003924970678_3027548060.didat");
+	xsi_register_didat("work_m_00000000003924970678_3027548060", "isim/datapath_isim_beh.exe.sim/work/m_00000000003924970678_3027548060.didat");
 	xsi_register_executes(pe);
 }

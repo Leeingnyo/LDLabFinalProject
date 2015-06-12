@@ -25,8 +25,7 @@ module datapath(
     output [7:0] PC,
     output [6:0] m,
 	output [6:0] l,
-	output CLK_,
-	output [7:0] datatowrite
+	output CLK_
     );
 
 	wire CLK;
