@@ -24,8 +24,7 @@ module datapath(
     input RESET,
     output [7:0] PC,
     output [6:0] m,
-	output [6:0] l,
-	output CLK_
+	output [6:0] l
     );
 
 	wire CLK;
@@ -37,7 +36,6 @@ module datapath(
 	wire [7:0] datatowrite;
 	
 	assign datatowrite = memtoreg ? writedata : aluoutput;
-	assign CLK_ = CLK;
 	
 	PC pc(branch, CLK, imm, RESET, PC);
 	clock_divider clock_divider(_CLK, CLK);

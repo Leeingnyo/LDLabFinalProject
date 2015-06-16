@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/LDLabFinalProject/datapathTest_isim_beh.exe" -prj "D:/LDLabFinalProject/datapathTest_beh.prj" "datapathTest" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/LDLabFinalProject/testTest_isim_beh.exe" -prj "D:/LDLabFinalProject/testTest_beh.prj" "testTest" "work.glbl" 
