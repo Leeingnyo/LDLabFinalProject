@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"C:/Users/cse/Desktop/LDLabFinalProject/datapathTest.v" Line 75: &lt;<arg fmt="%s" index="1">CLK_</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"C:/Users/cse/Desktop/LDLabFinalProject/datapathTest.v" Line 25: Module &lt;<arg fmt="%s" index="1">datapathTest</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 

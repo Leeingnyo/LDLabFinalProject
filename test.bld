@@ -1,11 +1,11 @@
-Release 14.4 ngdbuild P.49d (nt64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 -intstyle ise -dd _ngo -nt timestamp -uc test.ucf -p xc3s50an-tqg144-4 test.ngc
 test.ngd
 
-Reading NGO file "D:/LDLabFinalProject/test.ngc" ...
+Reading NGO file "C:/Users/cse/Desktop/LDLabFinalProject/test.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,7 +27,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 156540 kilobytes
+Total memory usage is 159828 kilobytes
 
 Writing NGD file "test.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec
