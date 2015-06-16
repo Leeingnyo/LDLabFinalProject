@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\cse\Desktop\LDLabFinalProject\datapath.ncd
+OUTFILE=C:\Users\cse\Desktop\LDLabFinalProject\datapath.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50an-4tqg144
+WORKINGDIR=C:\Users\cse\Desktop\LDLabFinalProject
+LICENSE=WebPack
+USER_INFO=211018837_1777507394_210601847_002

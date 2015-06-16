@@ -1,0 +1,200 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Tue Jun 16 21:23:15 2015
+# Process ID: 1752
+# Log file: C:/Users/cse/Desktop/LDLabFinalProject/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/cse/Desktop/LDLabFinalProject/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/cse/Desktop/LDLabFinalProject/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P129 [get_ports RESET]
+endgroup
+startgroup
+set_property package_pin P98 [get_ports {instruction[0]}]
+endgroup
+startgroup
+set_property package_pin P99 [get_ports {instruction[1]}]
+endgroup
+set_property package_pin "" [get_ports [list  _CLK]]
+startgroup
+set_property package_pin P101 [get_ports {instruction[2]}]
+endgroup
+startgroup
+set_property package_pin P103 [get_ports {instruction[3]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {instruction[4]}]
+endgroup
+startgroup
+set_property package_pin P112 [get_ports {instruction[5]}]
+endgroup
+startgroup
+set_property package_pin P104 [get_ports {instruction[5]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {instruction[6]}]
+endgroup
+startgroup
+set_property package_pin P103 [get_ports {instruction[3]}]
+endgroup
+startgroup
+set_property package_pin P102 [get_ports {instruction[6]}]
+endgroup
+startgroup
+set_property package_pin P110 [get_ports {instruction[7]}]
+endgroup
+startgroup
+set_property package_pin P105 [get_ports {instruction[4]}]
+endgroup
+startgroup
+set_property package_pin P114 [get_ports {PC[0]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {PC[1]}]
+endgroup
+set_property package_pin "" [get_ports [list  {PC[7]}]]
+startgroup
+set_property package_pin P113 [get_ports {PC[2]}]
+endgroup
+set_property package_pin "" [get_ports [list  {PC[7]}]]
+startgroup
+set_property package_pin P115 [get_ports {PC[3]}]
+endgroup
+startgroup
+set_property package_pin P117 [get_ports {PC[4]}]
+endgroup
+startgroup
+set_property package_pin P116 [get_ports {PC[5]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {PC[1]}]
+endgroup
+startgroup
+set_property package_pin P121 [get_ports {PC[6]}]
+endgroup
+startgroup
+set_property package_pin P111 [get_ports {PC[1]}]
+endgroup
+startgroup
+set_property package_pin P121 [get_ports {PC[6]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {PC[7]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {l[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {l[2]}]]
+startgroup
+set_property package_pin P31 [get_ports {l[1]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {l[2]}]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports {l[3]}]
+endgroup
+startgroup
+set_property package_pin P120 [get_ports {PC[7]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {l[4]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {l[5]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {l[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {l[6]}]]
+set_property is_loc_fixed false [get_ports [list  {l[0]}]]
+set_property is_loc_fixed true [get_ports [list  {l[0]}]]
+set_property is_loc_fixed false [get_ports [list  {l[0]}]]
+startgroup
+set_property package_pin P29 [get_ports {l[0]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {l[4]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {l[6]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {l[2]}]
+endgroup
+startgroup
+set_property package_pin P7 [get_ports {l[0]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {l[1]}]
+endgroup
+startgroup
+set_property package_pin P134 [get_ports {l[2]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {l[5]}]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports {l[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {l[4]}]
+endgroup
+startgroup
+set_property package_pin P139 [get_ports {l[2]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {l[5]}]
+endgroup
+startgroup
+set_property package_pin P138 [get_ports {l[3]}]
+endgroup
+startgroup
+set_property package_pin P134 [get_ports {l[4]}]
+endgroup
+startgroup
+set_property package_pin P47 [get_ports {l[5]}]
+endgroup
+startgroup
+set_property package_pin P46 [get_ports {l[6]}]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports {m[0]}]
+endgroup
+startgroup
+set_property package_pin P31 [get_ports {m[1]}]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports {PC[7]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {m[2]}]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports {m[3]}]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports {m[4]}]
+endgroup
+startgroup
+set_property package_pin P82 [get_ports {l[1]}]
+endgroup
+startgroup
+set_property package_pin P28 [get_ports {m[5]}]
+endgroup
+startgroup
+set_property package_pin P25 [get_ports {m[2]}]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports {m[6]}]
+endgroup
+startgroup
+set_property package_pin P31 [get_ports {m[1]}]
+endgroup
+startgroup
+set_property package_pin P88 [get_ports _CLK]
+endgroup
+save_constraints

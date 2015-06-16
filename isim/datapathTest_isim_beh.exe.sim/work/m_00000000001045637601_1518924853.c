@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/LDLabFinalProject/sign_extender.v";
+static const char *ng0 = "C:/Users/cse/Desktop/LDLabFinalProject/sign_extender.v";
 
 
 

@@ -33,7 +33,6 @@ module datapathTest;
 	wire [7:0] PC;
 	wire [6:0] m;
 	wire [6:0] l;
-	wire CLK_;
 
 	// Instantiate the Unit Under Test (UUT)
 	datapath uut (
@@ -42,8 +41,7 @@ module datapathTest;
 		.RESET(RESET), 
 		.PC(PC), 
 		.m(m), 
-		.l(l),
-		.CLK_(CLK_)
+		.l(l)
 	);
 	
 	reg [7:0] instructions [0:5];
@@ -74,7 +72,7 @@ module datapathTest;
 
 	end
 	
-	always@(posedge CLK_) begin
+	always@(posedge _CLK) begin
 		instruction = instructions[PC];
 	end
       

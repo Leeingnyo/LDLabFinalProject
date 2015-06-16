@@ -1,12 +1,18 @@
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "C:/Users/Thomas Hyeonwoo Kim/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/Thomas Hyeonwoo Kim/Desktop/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
-xst -intstyle ise -ifn "D:/LDLabFinalProject/datapath.xst" -ofn "D:/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc datapath.ucf -p xc3s50an-tqg144-4 datapath.ngc datapath.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o datapath_map.ncd datapath.ngd datapath.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc datapath.ucf -p xc3s50an-tqg144-4 datapath.ngc datapath.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o datapath_map.ncd datapath.ngd datapath.pcf 
+par -w -intstyle ise -ol high -t 1 datapath_map.ncd datapath.ncd datapath.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml datapath.twx datapath.ncd -o datapath.twr datapath.pcf -ucf datapath.ucf 
+bitgen -intstyle ise -f datapath.ut datapath.ncd 
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o datapath_map.ncd datapath.ngd datapath.pcf 
+xst -intstyle ise -ifn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.syr" 
+xst -intstyle ise -ifn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.xst" -ofn "C:/Users/cse/Desktop/LDLabFinalProject/datapath.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc datapath.ucf -p xc3s50an-tqg144-4 datapath.ngc datapath.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o datapath_map.ncd datapath.ngd datapath.pcf 
+par -w -intstyle ise -ol high -t 1 datapath_map.ncd datapath.ncd datapath.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml datapath.twx datapath.ncd -o datapath.twr datapath.pcf -ucf datapath.ucf 
+bitgen -intstyle ise -f datapath.ut datapath.ncd 

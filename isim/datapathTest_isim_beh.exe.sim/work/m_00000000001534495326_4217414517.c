@@ -21,9 +21,10 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/LDLabFinalProject/clock_divider.v";
+static const char *ng0 = "C:/Users/cse/Desktop/LDLabFinalProject/clock_divider.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
+static int ng3[] = {500000, 0};
 
 
 
@@ -102,7 +103,7 @@ LAB5:    xsi_set_current_line(34, ng0);
     t2 = (t0 + 1608);
     t3 = (t2 + 56U);
     t4 = *((char **)t3);
-    t5 = ((char*)((ng2)));
+    t5 = ((char*)((ng3)));
     memset(t8, 0, 8);
     xsi_vlog_signed_equal(t8, 32, t4, 32, t5, 32);
     t6 = (t8 + 4);
